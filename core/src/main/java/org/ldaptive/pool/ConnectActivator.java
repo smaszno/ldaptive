@@ -21,7 +21,7 @@ public class ConnectActivator implements Activator<Connection>
   public boolean activate(final Connection c)
   {
     boolean success = false;
-    if (c != null) {
+    if (c != null && !c.isOpen()) {
       try {
         c.open();
         success = true;
